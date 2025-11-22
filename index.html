@@ -12,11 +12,12 @@
     height: 100vh;
     width: 100vw;
 
-    /* Background image from your provided path */
-    background-image: url("/assets/coming-soon.png");
-    background-position: center;
+    /* Full-page background image (no cropping) */
+    background-image: url("Entraday/assets/coming-soon.png");
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain; /* ensures full image is visible */
+    background-color: #000; /* fallback color behind image */
 
     display: flex;
     justify-content: center;
@@ -25,11 +26,11 @@
   }
 
   .center-box {
-    background: rgba(0, 102, 255, 0.35); /* transparent blue */
+    background: rgba(0, 102, 255, 0.35); /* transparent blue overlay */
     padding: 25px 35px;
     border-radius: 12px;
     text-align: center;
-    backdrop-filter: blur(6px); /* optional */
+    backdrop-filter: blur(6px);
   }
 
   h1 {
@@ -44,8 +45,8 @@
     color: #fff;
   }
 </style>
-</head>
 
+</head>
 <body>
   <div class="center-box">
     <h1>COMING SOON</h1>
@@ -56,11 +57,6 @@
   </div>
 </body>
 </html>
-
-
-
-
-
 
 
 <!-- <!doctype html>
