@@ -1,5 +1,80 @@
 
-<img src="assets/coming-soon.png" alt="Coming Soon Website Banner">
+<!-- <img src="assets/coming-soon.png" alt="Coming Soon Website Banner"> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entraday — Coming Soon</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background: #ffffff;
+    }
+
+    .center-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40vh;
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+
+    .overlay h1 {
+      font-size: 48px;
+      color: #0b2f4a;
+      margin-bottom: 10px;
+    }
+
+    .overlay p {
+      font-size: 18px;
+      color: #333333;
+      line-height: 1.5;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .overlay h1 { font-size: 36px; }
+      .overlay p { font-size: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .overlay h1 { font-size: 28px; }
+      .overlay p { font-size: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="center-wrap">
+    <div class="overlay" aria-labelledby="coming-title">
+      <h1 id="coming-title">COMING SOON</h1>
+      <p>We're building something amazing.<br>
+      Stay tuned for the future of energy trading.</p>
+    </div>
+  </div>
+
+  <!-- Your full-width Coming Soon image -->
+  <img src="assets/unnamed.png" alt="Coming Soon Website Banner">
+
+</body>
+</html>
+
 
 <!-- <!doctype html>
 <html lang="en">
