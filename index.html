@@ -2,46 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Entraday — Coming Soon</title>
   <meta name="description" content="Entraday — Powering Your Tomorrow, Today. Coming Soon." />
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body {
-      min-height:100vh;
-      width:100%;
-      background: url('assets/coming-soon.png') no-repeat center center;
-      background-size: cover;
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; width: 100%; }
+
+    /* Container to hold the image and overlay */
+    .page {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background: #f6f8fb; /* fallback color */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* Full-viewport image but keep full image visible (no crop)
+       object-fit: contain preserves entire image and letterboxes if needed */
+    .bg-img {
+      position: fixed;      /* keep behind content and cover viewport */
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;  /* <--- show the whole image (no cropping) */
+      object-position: center top; /* prefer top-centered logo if needed */
+      z-index: 0;
+      pointer-events: none; /* clicks pass through */
+      background-color: #f6f8fb; /* visible where image doesn't fill */
+    }
+
+    /* Optional overlay to improve text contrast */
+    .overlay {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+      padding: 36px 48px;
+      border-radius: 12px;
+      /* lightweight translucent box so the image still shows */
+      background: rgba(255,255,255,0.0); /* transparent by default */
+      color: #072033;
+      /* Add subtle text shadow for readability on detailed backgrounds */
+      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    /* Headline / paragraph styling */
+    h1 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 64px;
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: #0b2f4a;
+    }
+    p {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-size: 20px;
+      margin: 0;
+      color: #122a3a;
+      opacity: 0.95;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1100px) {
+      h1 { font-size: 48px; }
+      p  { font-size: 18px; }
+    }
+    @media (max-width: 700px) {
+      h1 { font-size: 34px; }
+      p  { font-size: 15px; }
+      .overlay { padding: 20px; }
+    }
+    @media (max-width: 420px) {
+      h1 { font-size: 26px; }
+      p  { font-size: 14px; }
+    }
+
+    /* Accessibility: ensure overlay content is centered vertically on short viewports */
+    .center-wrap {
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color: #ffffff;
-      padding: 24px;
-    }
-    .overlay {
-      background: rgba(0,0,0,0.45);
-      padding: 36px 48px;
-      border-radius: 12px;
-      max-width: 960px;
-      width: 100%;
-    }
-    h1{font-size:48px;line-height:1;margin-bottom:12px;letter-spacing:1px}
-    p{font-size:18px;line-height:1.5;margin:0}
-    @media (max-width:768px){
-      h1{font-size:36px}
-      p{font-size:16px}
-      .overlay{padding:28px 20px}
-    }
-    @media (max-width:420px){
-      h1{font-size:28px}
-      p{font-size:14px}
-      .overlay{padding:18px 12px}
+      min-height: 60vh; /* so image remains visible but content centered */
     }
   </style>
 </head>
+<body>
+  <div class="page" role="main">
+    <!-- Use the full path to the uploaded image file in your environment -->
+    <img class="bg-img" src="/mnt/data/coming-soon.png" alt="Entraday Coming Soon background">
+
+    <!-- <div class="center-wrap">
+      <div class="overlay" aria-labelledby="coming-title">
+        <h1 id="coming-title">COMING SOON</h1>
+        <p>We're building something amazing.<br>Stay tuned for the future of energy trading.</p>
+      </div>
+    </div> -->
+  </div>
+</body>
 </html>
 
 
