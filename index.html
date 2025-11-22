@@ -12,8 +12,11 @@
     height: 100vh;
     width: 100vw;
 
-    /* Full-page background image with your exact path */
-    background: url("/assets/coming-soon.png") no-repeat center center/cover;
+    /* Background image from your provided path */
+    background-image: url("/assets/coming-soon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     display: flex;
     justify-content: center;
@@ -22,11 +25,11 @@
   }
 
   .center-box {
-    background: rgba(0, 102, 255, 0.35); /* transparent blue overlay */
+    background: rgba(0, 102, 255, 0.35); /* transparent blue */
     padding: 25px 35px;
     border-radius: 12px;
     text-align: center;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px); /* optional */
   }
 
   h1 {
@@ -41,8 +44,8 @@
     color: #fff;
   }
 </style>
-
 </head>
+
 <body>
   <div class="center-box">
     <h1>COMING SOON</h1>
@@ -53,6 +56,7 @@
   </div>
 </body>
 </html>
+
 
 
 
